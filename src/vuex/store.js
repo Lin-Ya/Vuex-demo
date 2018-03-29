@@ -9,8 +9,9 @@ Vue.use(Vuex);
 // 这里的mutations是固定的写法，意思是改变的，
 // 我们要改变state的数值的方法，必须写在mutations里
 
+//state是一个共享的状态对象
 const state = {
-    count: 1
+    count: 5
 }
 
 const mutations = {
