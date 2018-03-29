@@ -22,9 +22,7 @@
                 msg:'Hello Vuex',
             }
         },
-        computed: mapState({
-                count:state=>state.count            //mapState对象
-        }),
+        computed: mapState(["count"]),  //要给什么值赋值，就放到数组里面
         store
     }
 </script>
