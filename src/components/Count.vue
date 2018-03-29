@@ -23,7 +23,7 @@
             }
         },
         computed: mapState({
-                count:state=>state.count
+                count:state=>state.count            //mapState对象
         }),
         store
     }
