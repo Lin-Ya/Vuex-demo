@@ -5,12 +5,26 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-const state={
-    count:3
+//在store.js文件中加入两个改变state的方法。
+// 这里的mutations是固定的写法，意思是改变的，
+// 我们要改变state的数值的方法，必须写在mutations里
+
+const state = {
+    count: 1
+}
+
+const mutations = {
+    add(state) {
+        state.count++;
+    },
+    reduce(state) {
+        state.count--;
+    }
 }
 
 
 export default new Vuex.Store({
-	state   //状态
+    state,   //状态
+    mutations   //改变状态的方法
  
 })
