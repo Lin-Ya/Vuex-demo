@@ -15,19 +15,16 @@
 </template>
 <script>
     import store from '@/vuex/store'        //引用数据仓库
+    import {mapState} from 'vuex';          //需要加中括号
     export default{
         data(){
             return{
                 msg:'Hello Vuex',
             }
         },
-        computed: {
-            count(){
-                return this.$store.state.count;
-                //利用computed提前计算属性来赋值
-            }
-            
-        },
+        computed: mapState({
+                count:state=>state.count
+        }),
         store
     }
 </script>
