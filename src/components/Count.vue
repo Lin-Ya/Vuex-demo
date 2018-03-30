@@ -13,18 +13,23 @@
         </div>
     </div>
 </template>
+
 <script>
-    import store from '@/vuex/store'        //引用数据仓库
-    import {mapState, mutations, mapMutations} from 'vuex';          //需要加中括号
-    export default{
-        data(){
-            return{
-                msg:'Hello Vuex',
+    import store from '@/vuex/store' //引用数据仓库
+    import {
+        mapState,
+        mutations,
+        mapMutations
+    } from 'vuex'; //需要加中括号
+    export default {
+        data() {
+            return {
+                msg: 'Hello Vuex',
             }
         },
-        methods:mapMutations(['add','reduce']),
+        methods: mapMutations(['add', 'reduce']),
         //当映射的计算属性的名称与 state 的子节点名称相同时，我们也可以给 mapState 传一个字符串数组。
-        computed: mapState(["count"]), 
+        computed: mapState(["count"]),
         store
     }
 </script>

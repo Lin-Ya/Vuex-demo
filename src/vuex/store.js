@@ -11,21 +11,21 @@ Vue.use(Vuex);
 
 //state是一个共享的状态对象
 const state = {
-    count: 5
+  count: 5
 }
 
 const mutations = {
-    add(state, n) {
-        state.count+=n;
-    },
-    reduce(state) {
-        state.count--;
-    }
+  add(state, n) {
+    state.count += n;
+  },
+  reduce(state) {
+    state.count--;
+  }
 }
 
 
 export default new Vuex.Store({
-    state,   //获得状态的方法
-    mutations   //改变状态的方法
- 
+  state, //获得状态的方法
+  mutations //改变状态的方法
+
 })
