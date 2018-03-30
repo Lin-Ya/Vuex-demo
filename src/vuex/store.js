@@ -21,7 +21,7 @@ const mutations = {
     state.count += n;
   },
   reduce(state) {
-    state.count--;
+    state.count --;
   }
 }
 
@@ -29,11 +29,23 @@ const mutations = {
 const getters = {
     count: function (state) {
 			console.log('getters')
-			return state.count += 10;
+			return state.count += 0;
     }
+}
+
+//actions异步修改状态,可以在里面调用mutations中的方法
+const actions = {
+	addAction(context){
+		context.commit('add',100);
+		setTimeout(() => { context.commit('reduce') }, 3000);
+		console.log('即将要执行异步')
+	},
+	reduceAction({ commit }) {
+		commit('reduce')
+	}
 }
 
 
 export default new Vuex.Store({
-  state, mutations, getters
+  state, mutations, getters, actions
 })
