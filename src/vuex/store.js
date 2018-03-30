@@ -10,10 +10,12 @@ Vue.use(Vuex);
 // 我们要改变state的数值的方法，必须写在mutations里
 
 //state是一个共享的状态对象
+//获得状态的方法
 const state = {
   count: 5
 }
 
+//改变状态的方法
 const mutations = {
   add(state, n) {
     state.count += n;
@@ -23,9 +25,15 @@ const mutations = {
   }
 }
 
+//getters是一种在获取数据之前进行的一个过滤和加工
+const getters = {
+    count: function (state) {
+			console.log('getters')
+			return state.count += 10;
+    }
+}
+
 
 export default new Vuex.Store({
-  state, //获得状态的方法
-  mutations //改变状态的方法
-
+  state, mutations, getters
 })
