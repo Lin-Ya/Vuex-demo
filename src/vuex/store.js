@@ -15,8 +15,8 @@ const state = {
 }
 
 const mutations = {
-    add(state) {
-        state.count++;
+    add(state, n) {
+        state.count+=n;
     },
     reduce(state) {
         state.count--;
@@ -25,7 +25,7 @@ const mutations = {
 
 
 export default new Vuex.Store({
-    state,   //状态
+    state,   //获得状态的方法
     mutations   //改变状态的方法
  
 })
